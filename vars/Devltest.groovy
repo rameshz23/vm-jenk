@@ -18,6 +18,15 @@ def call(body) {
                     echo "this should be skipped, but it does not ("
                 }
             }
+            
+            stage('Back-end') {
+            agent {
+                docker { image 'maven:3-alpine' }
+            }
+            steps {
+                sh 'mvn --version'
+            }
+        }
         }
     }
 }
