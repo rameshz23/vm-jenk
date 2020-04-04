@@ -1,2 +1,2 @@
-@Library('jenkins_vm') _
+@Library('jenkins-vm') _
 Devltest{}
