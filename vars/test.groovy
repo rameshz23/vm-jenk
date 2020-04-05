@@ -29,10 +29,12 @@ def call(body) {
         //}
         stage ('Example') {
             		steps {
-		                sh """ env > envfile """// log.info 'Starting' 
+		                sh """ env > envfile
+					cat envfile """// log.info 'Starting' 
+				
 		                script { 
-			                   echo $envfile.USER //log.info 'Starting'
-			                   echo $envfile.SHELL //log.warning 'Nothing to do!'
+			                   echo USER //log.info 'Starting'
+			                   echo "$envfile.SHELL" //log.warning 'Nothing to do!'
 		                }
 		            }
 	        }
@@ -40,7 +42,7 @@ def call(body) {
 			steps {
 				script {
 					 echo "prepare environment "
-                            		 currentBuild.displayName = "$env.NEW_BUILDNUMBER"
+                            		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
                                          common.prepareEnv()
                                          cleanWs()
 				}
