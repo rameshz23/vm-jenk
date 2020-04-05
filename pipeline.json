@@ -1,0 +1,57 @@
+{
+	"jobID": "fa6f7c2ae9364ad39ce13b015e444c6b",
+	"jobType": "create",
+	"environment": "QA",
+	"datacenter": "RQ",
+	"hostname": "vmpipelineqz02u",
+	"IP": "10.100.14.19",
+	"OS": "Linux",
+	"networkzone": "DMZ",
+	"region": "Common",
+	"server_type": "Centos6",
+	"vm_deletion": {
+		"execution": false
+	},
+	"vm_creation": {
+		"execution": true,
+		"hostname": "vmpipelineqz02u",
+		"IP": "10.100.14.19",
+		"cpu": "1",
+		"memory": "2",
+		"prefix": "22",
+		"gateway": "10.100.12.251",
+		"dns": ["10.100.12.11", "10.100.12.12"],
+		"environment": "Rcopia_RQ_QA",
+		"network": "DMZ",
+		"OS": "Linux",
+		"vmware": {
+			"resource_pool": "qaucs_cluster_01",
+			"template": "tl-lnx-68-gen-20191001",
+			"cspec": "",
+			"vlan": "qa_dmz_v241"
+		},
+		"chef": {
+			"initial_run_list": "RQ_NetOps_DMZ",
+			"extra_attributes": {
+				"reboot_time": "",
+				"cleanup_time": ""
+			}
+		},
+		"mongo": {
+			"mongo_server": false
+		},
+		"oracle": {
+			"oracle_server": false
+		},
+		"zabbix": {
+			"zabbix_server": "dfmonqa.dfcorp.drfirst.com",
+			"templates": ["10116", "10001", "12444"],
+			"hostgroups": ["281", "316"]
+		}
+	},
+	"app_deploy": {
+		"execution": false
+	}
+}
+
+

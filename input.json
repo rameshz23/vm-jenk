@@ -1,0 +1,6 @@
+{ 
+	"name": "sample",
+	"environment": "qa",
+	"os_type": "Linux",
+	"server_type": "recreate"
+}

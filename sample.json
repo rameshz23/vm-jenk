@@ -1,0 +1,70 @@
+{
+                "__comment__": "VMJSON will contain the JSON array needed to be submitted in the queue, even for 1 entry in the queue it can be 1 element in the array",
+                "jobID": "TOBEGENERATED",
+                "jobType": "recreate",
+                "isPeer": "false",
+                "environment": "Development",
+                "datacenter": "RR",
+                "networkzone": "DMZ",
+                "region": "Common",
+                "server_type": "Centos6",
+                "vm_deletion": {
+                                "execution": "true",
+                                "hostname": "hazcastrz20u",
+                                "IP": "10.100.16.19",
+                                "beyondtrust_name": "",
+                                "lb_node_name": "",
+                                "chef_hostname": "",
+                                "lb_pool_names": [{
+                                                "name": "central_http_pool",
+                                                "ports": [52001]
+                                }, {
+                                                "name": "medhxapi_http_pool",
+                                                "ports": [52001, 52002]
+                                }]
+                },
+                "vm_creation": {
+                                "execution": "true",
+                                "hostname": "hazcastrz20u",
+                                "IP": "10.100.16.19",
+                                "cpu": "4",
+                                "memory": "8",
+                                "prefix": "22",
+                                "gateway": "10.100.16.251",
+                                "dns": ["10.100.16.11", "10.100.16.12"],
+                                "environment": "Rcopia_RR_Dev",
+                                "network": "DMZ",
+                                "OS": "Linux",
+                                "vmware": {
+                                                "resource_pool": "qaucs_cluster_01",
+                                                "template": "tl-lnx-68-gen-20171017",
+                                                "cspec": "",
+                                                "vlan": "Dev_v246"
+                                },
+                                "chef": {
+                                                "initial_run_list": "RR_NetOps_DMZ",
+                                                "extra_attributes": {
+                                                                "reboot_time": "",
+                                                                "cleanup_time": ""
+                                                }
+                                },
+                                "mongo": {
+                                                "mongo_server": "false"
+                                },
+                                "oracle": {
+                                                "oracle_server": "false"
+                                },
+                                "zabbix": {
+                                                "zabbix_server": "dfmonqa.drfirst.com",
+                                                "templates": ["10116", "10001", "12444"],
+                                                "hostgroups": ["299", "317"]
+                                }
+                },
+                "app_deploy": {
+                                "execution": "true",
+                                "app_name": "medhxapi",
+                                "app_farm": "medhxapi",
+                                "app_run_list": "medhxapi_Development_RR"
+                }
+}
+
