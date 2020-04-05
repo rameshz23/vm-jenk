@@ -29,10 +29,10 @@ def call(body) {
         //}
         stage ('Example') {
             		steps {
-		                // log.info 'Starting' 
+		                sh """ env > envfile """// log.info 'Starting' 
 		                script { 
-			                   echo $env.USER //log.info 'Starting'
-			                   echo $env.SHELL //log.warning 'Nothing to do!'
+			                   echo $envfile.USER //log.info 'Starting'
+			                   echo $envfile.SHELL //log.warning 'Nothing to do!'
 		                }
 		            }
 	        }
