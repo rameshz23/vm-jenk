@@ -34,7 +34,7 @@ def call(body) {
 				
 		                script { 
 			                   echo USER //log.info 'Starting'
-			                   echo "$envfile.SHELL" //log.warning 'Nothing to do!'
+			                   echo SHELL //log.warning 'Nothing to do!'
 		                }
 		            }
 	        }
