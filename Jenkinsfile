@@ -1,2 +1,2 @@
 @Library('jenkins-vm') _
-testJob{}
+test{}
