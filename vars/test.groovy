@@ -27,6 +27,25 @@ def call(body) {
            //     sh 'mvn --version'
            // }
         //}
+        stage ('Example') {
+            		steps {
+		                // log.info 'Starting' 
+		                script { 
+			                    log.info 'Starting'
+			                    log.warning 'Nothing to do!'
+		                }
+		            }
+	        }
+		stage ('application'){
+			steps {
+				script {
+					 echo "prepare environment "
+                            		 currentBuild.displayName = "$env.NEW_BUILDNUMBER"
+                                         common.prepareEnv()
+                                         cleanWs()
+				}
+			}
+		}
             
         }
     }
