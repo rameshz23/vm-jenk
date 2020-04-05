@@ -31,8 +31,8 @@ def call(body) {
             		steps {
 		                // log.info 'Starting' 
 		                script { 
-			                    log.info 'Starting'
-			                    log.warning 'Nothing to do!'
+			                   echo $env.USER //log.info 'Starting'
+			                   echo $env.SHELL //log.warning 'Nothing to do!'
 		                }
 		            }
 	        }
