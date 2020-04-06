@@ -4,7 +4,7 @@ import groovy.io.FileType
 import groovy.json.JsonSlurper
 
 def prepareEnv(){
-
+    jobID = "fa6f7c2ae9364ad39ce13b015e444c6b"
     env.jsonfilename = "$jobID" + "." + "json"
 
     // condition to verify input json fileExists
