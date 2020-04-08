@@ -49,7 +49,7 @@ def call(body) {
 				script {
 					echo "current build number: ${currentBuild.number}"
             				echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
-					echo "host name : ${host}"
+					
             
 					 echo "prepare environment "
                             		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
