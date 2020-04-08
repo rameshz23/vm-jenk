@@ -47,6 +47,13 @@ def call(body) {
 		stage ('application'){
 			steps {
 				script {
+					echo "current build number: ${currentBuild.number}"
+            echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
+            def causes = currentBuild.rawBuild.getCauses()
+            echo "causes: ${causes}"
+            def rebuildCause0 = currentBuild.rawBuild.getCause(com.sonyericsson.rebuild.RebuildCause)
+            echo "rebuildCause0: ${rebuildCause0}"
+            echo "rebuild up number: ${rebuildCause0.getUpstreamBuild()}"
 					 echo "prepare environment "
                             		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
                                         // common.prepareEnv()
