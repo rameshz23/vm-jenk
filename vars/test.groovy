@@ -8,7 +8,7 @@ def call(body) {
             options {
                 buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
                 }
-	    when { anyOf { branch 'master'; branch 'application' } }
+	    
         agent any
         stages {
             stage('This one should be skipped') {
