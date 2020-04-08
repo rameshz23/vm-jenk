@@ -4,7 +4,7 @@ def call(body) {
     body.delegate = config
     body()
     jobID= "fa6f7c2ae9364ad39ce13b015e444c6b"
-	readJSON file: 'build-parameter.json', text: 'build'
+	readJSON file: '$WORKSPACE/build-parameter.json', text: 'build'
     pipeline {
             options {
                 buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
