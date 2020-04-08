@@ -8,11 +8,10 @@ def call(body) {
             options {
                 buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
                 }
-	    parameters {
-		string(name: 'jobID', defaultValue: '' )
+	    //parameters {
+		//string(name: 'jobID', defaultValue: '' )
                 //string(name: 'NEW_BUILDNUMBER', defaultValue: '' )
-		stringParam "BUILD_NUMBER"    
-	    }    
+	   // }    
 	    
         agent any
         stages {
