@@ -8,6 +8,10 @@ def call(body) {
             options {
                 buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
                 }
+	    parameters {
+		string(name: 'jobID', defaultValue: '' )
+                string(name: 'NEW_BUILDNUMBER', defaultValue: '' )
+	    }    
 	    
         agent any
         stages {
@@ -36,6 +40,7 @@ def call(body) {
 		                script { 
 			                   echo USER //log.info 'Starting'
 			                   echo SHELL //log.warning 'Nothing to do!'
+					currentBuild.displayName = "$env.NEW_BUILDNUMBER"
 		                }
 		            }
 	        }
@@ -44,7 +49,7 @@ def call(body) {
 				script {
 					 echo "prepare environment "
                             		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
-                                         common.prepareEnv()
+                                        // common.prepareEnv()
                                          cleanWs()
 				}
 			}
