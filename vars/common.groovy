@@ -16,8 +16,8 @@ def prepareEnv(){
     // condition to verify input json fileExists
     sh """
       if [ -f inputfile.json ]; then
-         echo env.os
-         echo env.hostname
+         echo $env.os
+         echo $env.hostname
       else
          echo no file found 
       fi
