@@ -1,6 +1,6 @@
-{ 
-	"name": "sample",
-	"environment": "qa",
-	"os_type": "Linux",
-	"server_type": "recreate"
+{
+   "hostname":"acidb01u",
+   "ip":"10.100.1.10",
+   "os":"Linux",
+   "user":"admin"
 }
