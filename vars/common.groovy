@@ -6,15 +6,16 @@ import groovy.json.JsonSlurper
 def prepareEnv(){
     jobID = "fa6f7c2ae9364ad39ce13b015e444c6b"
     env.jsonfilename = "$jobID" + "." + "json"
-    jsonFile1 = "$WORKSPACE/inputfile.json"
+    jsonFile1 = "$WORKSPACE/input.json"
     def json1 = readJSON file: jsonFile1
 
     // condition to verify input json fileExists
     sh """
       //if [ -f inputfile.json ]; then
          echo "file condition"
+         echo $env.hostname
       else
-         cp -f /var/vmlist/$env.jsonfilename $WORKSPACE/inputfile.json
+         echo $env.hostname
       fi
     """
  }
