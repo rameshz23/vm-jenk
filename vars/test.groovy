@@ -53,7 +53,7 @@ def call(body) {
             
 					 echo "prepare environment "
                             		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
-                                        // common.prepareEnv()
+                                         common.prepareEnv()
                                          cleanWs()
 				}
 			}
