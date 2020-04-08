@@ -8,9 +8,6 @@ def call(body) {
             options {
                 buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
                 }
-	    wrappers {
-        	buildName('${BUILD_NUMBER}')
-	    }
 	    parameters {
 		string(name: 'jobID', defaultValue: '' )
                 //string(name: 'NEW_BUILDNUMBER', defaultValue: '' )
