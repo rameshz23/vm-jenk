@@ -47,14 +47,13 @@ def call(body) {
 		stage ('application'){
 			steps {
 				script {
-					echo "current build number: ${currentBuild.number}"
-            				echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
-					
-            
-					 echo "prepare environment "
+					//echo "current build number: ${currentBuild.number}"
+            				//echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
+					// echo "prepare environment "
                             		// currentBuild.displayName = "$env.NEW_BUILDNUMBER"
-                                         common.prepareEnv()
-                                         cleanWs()
+                                         //common.prepareEnv()
+                                        echo "Welcome to application Stage!" 
+					cleanWs()
 				}
 			}
 		}
